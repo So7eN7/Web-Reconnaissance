@@ -1,53 +1,77 @@
 {
-    "domain": "pasted.ir",
-    "timestamp": "2026-02-03T00:47:55.967787+03:30",
-    "score": 100,
+    "domain": "pasted.dev",
+    "timestamp": "2026-02-03T01:21:14.383335+03:30",
+    "score": 45,
     "subdomains": [
         {
-            "subdomain": "www.pasted.ir",
+            "subdomain": "www.pasted.dev",
             "ips": [
-                "185.105.239.181"
+                "91.195.240.19"
             ],
             "alive": true
         },
         {
-            "subdomain": "api.pasted.ir",
+            "subdomain": "api.pasted.dev",
             "ips": [],
             "alive": false
         },
         {
-            "subdomain": "dev.pasted.ir",
+            "subdomain": "dev.pasted.dev",
             "ips": [],
             "alive": false
         },
         {
-            "subdomain": "test.pasted.ir",
+            "subdomain": "test.pasted.dev",
             "ips": [],
             "alive": false
         },
         {
-            "subdomain": "staging.pasted.ir",
+            "subdomain": "staging.pasted.dev",
             "ips": [],
             "alive": false
         },
         {
-            "subdomain": "mail.pasted.ir",
+            "subdomain": "mail.pasted.dev",
             "ips": [],
             "alive": false
         }
     ],
-    "findings": [],
-    "services": [
+    "findings": [
         {
-            "subdomain": "www.pasted.ir",
-            "port": 22,
-            "classification": {
-                "service": "SSH",
-                "confidence": 0.9
-            }
+            "type": "Header",
+            "issue": "Missing Content-Security-Policy",
+            "severity": "High",
+            "recommendation": "Add Content-Security-Policy header"
         },
         {
-            "subdomain": "www.pasted.ir",
+            "type": "Header",
+            "issue": "Missing Strict-Transport-Security",
+            "severity": "High",
+            "recommendation": "Add Strict-Transport-Security header"
+        },
+        {
+            "type": "Header",
+            "issue": "Missing X-Frame-Options",
+            "severity": "Medium",
+            "recommendation": "Add X-Frame-Options header"
+        },
+        {
+            "type": "Header",
+            "issue": "Missing X-Content-Type-Options",
+            "severity": "Medium",
+            "recommendation": "Add X-Content-Type-Options header"
+        },
+        {
+            "type": "Header",
+            "issue": "Missing Referrer-Policy",
+            "severity": "Low",
+            "recommendation": "Add Referrer-Policy header"
+        }
+    ],
+    "services": [
+        {
+            "subdomain": "www.pasted.dev",
+            "ip": "91.195.240.19",
             "port": 80,
             "classification": {
                 "service": "HTTP",
@@ -55,7 +79,8 @@
             }
         },
         {
-            "subdomain": "www.pasted.ir",
+            "subdomain": "www.pasted.dev",
+            "ip": "91.195.240.19",
             "port": 443,
             "classification": {
                 "service": "HTTP",
@@ -66,43 +91,51 @@
     "paths": [
         {
             "path": "admin",
-            "url": "http://www.pasted.ir/admin",
-            "status": 301
+            "url": "http://www.pasted.dev/admin",
+            "status": 403,
+            "subdomain": "www.pasted.dev"
         },
         {
             "path": "login",
-            "url": "http://www.pasted.ir/login",
-            "status": 301
+            "url": "http://www.pasted.dev/login",
+            "status": 403,
+            "subdomain": "www.pasted.dev"
         },
         {
             "path": "dashboard",
-            "url": "http://www.pasted.ir/dashboard",
-            "status": 301
+            "url": "http://www.pasted.dev/dashboard",
+            "status": 403,
+            "subdomain": "www.pasted.dev"
         },
         {
             "path": "backup",
-            "url": "http://www.pasted.ir/backup",
-            "status": 301
+            "url": "http://www.pasted.dev/backup",
+            "status": 403,
+            "subdomain": "www.pasted.dev"
         },
         {
             "path": "robots.txt",
-            "url": "http://www.pasted.ir/robots.txt",
-            "status": 301
+            "url": "http://www.pasted.dev/robots.txt",
+            "status": 403,
+            "subdomain": "www.pasted.dev"
         },
         {
             "path": "sitemap.xml",
-            "url": "http://www.pasted.ir/sitemap.xml",
-            "status": 301
+            "url": "http://www.pasted.dev/sitemap.xml",
+            "status": 403,
+            "subdomain": "www.pasted.dev"
         },
         {
             "path": ".git",
-            "url": "http://www.pasted.ir/.git",
-            "status": 301
+            "url": "http://www.pasted.dev/.git",
+            "status": 403,
+            "subdomain": "www.pasted.dev"
         },
         {
             "path": ".env",
-            "url": "http://www.pasted.ir/.env",
-            "status": 301
+            "url": "http://www.pasted.dev/.env",
+            "status": 403,
+            "subdomain": "www.pasted.dev"
         }
     ]
 }
