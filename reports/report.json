@@ -1,78 +1,90 @@
 {
-    "domain": "pasted.ir",
-    "ip": "185.105.239.181",
-    "timestamp": "2026-02-02T19:58:14.329009",
-    "services": [
+    "target": "http://bonyanfanavarbaran.ir",
+    "timestamp": "2026-02-02T20:31:46.552091",
+    "results": [
         {
-            "port": 80,
-            "banner": "HTTP/1.1 400 Bad Request\r\nServer: nginx/1.29.0\r\nDate: Mon, 02 Feb 2026 19:58:13 GMT\r\nContent-Type: text/html\r\nContent-Length: 157\r\nConnection: close",
-            "http_info": {
-                "server": "nginx/1.29.0",
-                "x_powered_by": "",
-                "status_code": 200,
-                "headers": {
-                    "Server": "nginx/1.29.0",
-                    "Date": "Mon, 02 Feb 2026 19:58:14 GMT",
-                    "Content-Type": "text/html; charset=utf-8",
-                    "Transfer-Encoding": "chunked",
-                    "Connection": "keep-alive",
-                    "Vary": "Accept-Encoding",
-                    "X-Frame-Options": "DENY, DENY",
-                    "X-Content-Type-Options": "nosniff, nosniff",
-                    "Referrer-Policy": "strict-origin-when-cross-origin, strict-origin-when-cross-origin",
-                    "Cross-Origin-Opener-Policy": "same-origin",
-                    "Content-Security-Policy": "default-src 'self'; connect-src 'self' https://lottie.host https://*.lottie.host https://cdnjs.cloudflare.com https://unpkg.com https://cdn.jsdelivr.net; style-src 'self' 'unsafe-inline' https://cdn.jsdelivr.net https://cdnjs.cloudflare.com; script-src 'self' 'unsafe-inline' 'wasm-unsafe-eval' https://cdnjs.cloudflare.com https://unpkg.com https://cdn.jsdelivr.net; font-src 'self' https://cdn.jsdelivr.net; img-src 'self' data: https:; media-src 'self' https:;",
-                    "Strict-Transport-Security": "max-age=63072000; includeSubDomains; preload",
-                    "Content-Encoding": "gzip"
-                }
-            },
-            "tls_info": null,
-            "classification": {
-                "service": "HTTP",
-                "confidence": 0.95,
-                "evidence": "HTTP/1.1 400 Bad Request\r\nServer: nginx/1.29.0\r\nDate: Mon, 02 Feb 2026 19:58:13 GMT\r\nContent-Type: t"
-            }
+            "path": "admin",
+            "url": "http://bonyanfanavarbaran.ir/admin",
+            "status_code": 301,
+            "meaning": "Redirected resource",
+            "confidence": 0.7
         },
         {
-            "port": 443,
-            "banner": "HTTP/1.1 400 Bad Request\r\nServer: nginx/1.29.0\r\nDate: Mon, 02 Feb 2026 19:58:14 GMT\r\nContent-Type: text/html\r\nContent-Length: 157\r\nConnection: close\r\nContent-Security-Policy: default-src 'self'; connect-src 'self' https://lottie.host https://*.lottie.host https://cdnjs.cloudflare.com https://unpkg.com https://cdn.jsdelivr.net; style-src 'self' 'unsafe-inline' https://cdn.jsdelivr.net https://cdnjs.cloudflare.com; script-src 'self' 'unsafe-inline' 'wasm-unsafe-eval' https://cdnjs.cloudflare.com https://unpkg.com https://cdn.jsdelivr.net; font-src 'self' https://cdn.jsdelivr.net; img-src 'self' data: https:; media-src 'self' https:;\r\nX-Frame-Options: DENY\r\nX-Content-Type-Options: nosniff\r\nReferrer-Policy: strict-origin-when-cross-origin\r\nStrict-Transport-Security: max-age=63072000; includeSubDomains; preload",
-            "http_info": {
-                "server": "nginx/1.29.0",
-                "x_powered_by": "",
-                "status_code": 200,
-                "headers": {
-                    "Server": "nginx/1.29.0",
-                    "Date": "Mon, 02 Feb 2026 19:58:14 GMT",
-                    "Content-Type": "text/html; charset=utf-8",
-                    "Transfer-Encoding": "chunked",
-                    "Connection": "keep-alive",
-                    "Vary": "Accept-Encoding",
-                    "X-Frame-Options": "DENY, DENY",
-                    "X-Content-Type-Options": "nosniff, nosniff",
-                    "Referrer-Policy": "strict-origin-when-cross-origin, strict-origin-when-cross-origin",
-                    "Cross-Origin-Opener-Policy": "same-origin",
-                    "Content-Security-Policy": "default-src 'self'; connect-src 'self' https://lottie.host https://*.lottie.host https://cdnjs.cloudflare.com https://unpkg.com https://cdn.jsdelivr.net; style-src 'self' 'unsafe-inline' https://cdn.jsdelivr.net https://cdnjs.cloudflare.com; script-src 'self' 'unsafe-inline' 'wasm-unsafe-eval' https://cdnjs.cloudflare.com https://unpkg.com https://cdn.jsdelivr.net; font-src 'self' https://cdn.jsdelivr.net; img-src 'self' data: https:; media-src 'self' https:;",
-                    "Strict-Transport-Security": "max-age=63072000; includeSubDomains; preload",
-                    "Content-Encoding": "gzip"
-                }
-            },
-            "tls_info": null,
-            "classification": {
-                "service": "HTTP",
-                "confidence": 0.95,
-                "evidence": "HTTP/1.1 400 Bad Request\r\nServer: nginx/1.29.0\r\nDate: Mon, 02 Feb 2026 19:58:14 GMT\r\nContent-Type: t"
-            }
+            "path": "login",
+            "url": "http://bonyanfanavarbaran.ir/login",
+            "status_code": 301,
+            "meaning": "Redirected resource",
+            "confidence": 0.7
         },
         {
-            "port": 22,
-            "banner": "SSH-2.0-OpenSSH_9.2p1 Debian-2+deb12u7",
-            "http_info": null,
-            "tls_info": null,
-            "classification": {
-                "service": "SSH",
-                "confidence": 0.9,
-                "evidence": "SSH-2.0-OpenSSH_9.2p1 Debian-2+deb12u7"
-            }
+            "path": "dashboard",
+            "url": "http://bonyanfanavarbaran.ir/dashboard",
+            "status_code": 301,
+            "meaning": "Redirected resource",
+            "confidence": 0.7
+        },
+        {
+            "path": "backup",
+            "url": "http://bonyanfanavarbaran.ir/backup",
+            "status_code": 301,
+            "meaning": "Redirected resource",
+            "confidence": 0.7
+        },
+        {
+            "path": "config",
+            "url": "http://bonyanfanavarbaran.ir/config",
+            "status_code": 301,
+            "meaning": "Redirected resource",
+            "confidence": 0.7
+        },
+        {
+            "path": ".git",
+            "url": "http://bonyanfanavarbaran.ir/.git",
+            "status_code": 301,
+            "meaning": "Redirected resource",
+            "confidence": 0.7
+        },
+        {
+            "path": ".env",
+            "url": "http://bonyanfanavarbaran.ir/.env",
+            "status_code": 301,
+            "meaning": "Redirected resource",
+            "confidence": 0.7
+        },
+        {
+            "path": "robots.txt",
+            "url": "http://bonyanfanavarbaran.ir/robots.txt",
+            "status_code": 301,
+            "meaning": "Redirected resource",
+            "confidence": 0.7
+        },
+        {
+            "path": "sitemap.xml",
+            "url": "http://bonyanfanavarbaran.ir/sitemap.xml",
+            "status_code": 301,
+            "meaning": "Redirected resource",
+            "confidence": 0.7
+        },
+        {
+            "path": "api",
+            "url": "http://bonyanfanavarbaran.ir/api",
+            "status_code": 301,
+            "meaning": "Redirected resource",
+            "confidence": 0.7
+        },
+        {
+            "path": "test",
+            "url": "http://bonyanfanavarbaran.ir/test",
+            "status_code": 301,
+            "meaning": "Redirected resource",
+            "confidence": 0.7
+        },
+        {
+            "path": "staging",
+            "url": "http://bonyanfanavarbaran.ir/staging",
+            "status_code": 301,
+            "meaning": "Redirected resource",
+            "confidence": 0.7
         }
     ]
 }

@@ -1,27 +1,26 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Passive Service Scan</title>
+    <title>Passive Directory Discovery</title>
     <style>
         body { font-family: Arial; margin: 40px; }
-        .port { margin-bottom: 15px; }
+        .entry { margin-bottom: 15px; }
     </style>
 </head>
 <body>
 
-<h1>Passive Service Recognition Report</h1>
+<h1>Passive Web Resource Discovery Report</h1>
 
-<p><strong>Target:</strong> {{ data.domain }}</p>
-<p><strong>IP:</strong> {{ data.ip }}</p>
+<p><strong>Target:</strong> {{ data.target }}</p>
 
-<h2>Detected Services</h2>
+<h2>Discovered Resources</h2>
 
-{% for s in data.services %}
-<div class="port">
-    <strong>Port {{ s.port }}</strong><br>
-    Service: {{ s.classification.service }}<br>
-    Confidence: {{ s.classification.confidence }}<br>
-    Evidence: <pre>{{ s.classification.evidence }}</pre>
+{% for r in data.results %}
+<div class="entry">
+    <strong>{{ r.path }}</strong><br>
+    URL: {{ r.url }}<br>
+    Status: {{ r.status_code }} — {{ r.meaning }}<br>
+    Confidence: {{ r.confidence }}
 </div>
 {% endfor %}
 

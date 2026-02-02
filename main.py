@@ -1,58 +1,33 @@
-from dns_resolver import resolve_domain
-from port_probe import probe_ports
-from banner_grabber import grab_banner
-from http_fingerprint import fingerprint_http
-from tls_inspector import inspect_tls
-from service_classifer import classify_service
+from path_wordlist import COMMON_PATHS
+from path_scanner import scan_path
+from response_analyzer import analyze_response
+from confidence_scoring import score_path
 from report_generator import generate_json_report, generate_html_report
 from datetime import datetime 
 
-def main(domain):
-    ip = resolve_domain(domain)
-    if not ip:
-        print("Could not resolve domain")
-        return
-    
-    services = []
-    open_ports = probe_ports(ip)
+def main(base_url):
+    findings = []
 
-    for entry in open_ports:
-        port = entry["port"]
-        banner = grab_banner(ip, port)
+    for path in COMMON_PATHS:
+        result = scan_path(base_url, path)
+        analysis = analyze_response(result)
 
-        http_info = None
-        tls_info = None
-
-        if port == 80:
-            http_info = fingerprint_http(f"http://{domain}")
-        elif port == 443:
-            http_info = fingerprint_http(f"https://{domain}")
-            tls_info = inspect_tls(ip)
-
-        classification = classify_service(port, banner, http_info)
-
-        services.append({
-            "port": port,
-            "banner": banner,
-            "http_info": http_info,
-            "tls_info": tls_info,
-            "classification": classification
-        })
+        if analysis:
+            analysis["confidence"] = score_path(analysis)
+            findings.append(analysis)
 
     report = {
-        "domain": domain,
-        "ip": ip,
+        "target": base_url,
         "timestamp": datetime.utcnow().isoformat(),
-        "services": services
+        "results": findings
     }
 
     generate_json_report(report)
     generate_html_report(report)
-    print("Service scan completed.")
 
+    print("Directory scan complete.")
+    print(f"Findings: {len(findings)}")
 
 if __name__ == "__main__":
-    target = input("Enter domain: ")
+    target = input("Enter base URL: ")
     main(target)
-
-        

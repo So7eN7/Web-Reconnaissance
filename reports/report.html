@@ -1,47 +1,103 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Passive Service Scan</title>
+    <title>Passive Directory Discovery</title>
     <style>
         body { font-family: Arial; margin: 40px; }
-        .port { margin-bottom: 15px; }
+        .entry { margin-bottom: 15px; }
     </style>
 </head>
 <body>
 
-<h1>Passive Service Recognition Report</h1>
+<h1>Passive Web Resource Discovery Report</h1>
 
-<p><strong>Target:</strong> pasted.ir</p>
-<p><strong>IP:</strong> 185.105.239.181</p>
+<p><strong>Target:</strong> http://bonyanfanavarbaran.ir</p>
 
-<h2>Detected Services</h2>
+<h2>Discovered Resources</h2>
 
 
-<div class="port">
-    <strong>Port 80</strong><br>
-    Service: HTTP<br>
-    Confidence: 0.95<br>
-    Evidence: <pre>HTTP/1.1 400 Bad Request
-Server: nginx/1.29.0
-Date: Mon, 02 Feb 2026 19:58:13 GMT
-Content-Type: t</pre>
+<div class="entry">
+    <strong>admin</strong><br>
+    URL: http://bonyanfanavarbaran.ir/admin<br>
+    Status: 301 — Redirected resource<br>
+    Confidence: 0.7
 </div>
 
-<div class="port">
-    <strong>Port 443</strong><br>
-    Service: HTTP<br>
-    Confidence: 0.95<br>
-    Evidence: <pre>HTTP/1.1 400 Bad Request
-Server: nginx/1.29.0
-Date: Mon, 02 Feb 2026 19:58:14 GMT
-Content-Type: t</pre>
+<div class="entry">
+    <strong>login</strong><br>
+    URL: http://bonyanfanavarbaran.ir/login<br>
+    Status: 301 — Redirected resource<br>
+    Confidence: 0.7
 </div>
 
-<div class="port">
-    <strong>Port 22</strong><br>
-    Service: SSH<br>
-    Confidence: 0.9<br>
-    Evidence: <pre>SSH-2.0-OpenSSH_9.2p1 Debian-2+deb12u7</pre>
+<div class="entry">
+    <strong>dashboard</strong><br>
+    URL: http://bonyanfanavarbaran.ir/dashboard<br>
+    Status: 301 — Redirected resource<br>
+    Confidence: 0.7
+</div>
+
+<div class="entry">
+    <strong>backup</strong><br>
+    URL: http://bonyanfanavarbaran.ir/backup<br>
+    Status: 301 — Redirected resource<br>
+    Confidence: 0.7
+</div>
+
+<div class="entry">
+    <strong>config</strong><br>
+    URL: http://bonyanfanavarbaran.ir/config<br>
+    Status: 301 — Redirected resource<br>
+    Confidence: 0.7
+</div>
+
+<div class="entry">
+    <strong>.git</strong><br>
+    URL: http://bonyanfanavarbaran.ir/.git<br>
+    Status: 301 — Redirected resource<br>
+    Confidence: 0.7
+</div>
+
+<div class="entry">
+    <strong>.env</strong><br>
+    URL: http://bonyanfanavarbaran.ir/.env<br>
+    Status: 301 — Redirected resource<br>
+    Confidence: 0.7
+</div>
+
+<div class="entry">
+    <strong>robots.txt</strong><br>
+    URL: http://bonyanfanavarbaran.ir/robots.txt<br>
+    Status: 301 — Redirected resource<br>
+    Confidence: 0.7
+</div>
+
+<div class="entry">
+    <strong>sitemap.xml</strong><br>
+    URL: http://bonyanfanavarbaran.ir/sitemap.xml<br>
+    Status: 301 — Redirected resource<br>
+    Confidence: 0.7
+</div>
+
+<div class="entry">
+    <strong>api</strong><br>
+    URL: http://bonyanfanavarbaran.ir/api<br>
+    Status: 301 — Redirected resource<br>
+    Confidence: 0.7
+</div>
+
+<div class="entry">
+    <strong>test</strong><br>
+    URL: http://bonyanfanavarbaran.ir/test<br>
+    Status: 301 — Redirected resource<br>
+    Confidence: 0.7
+</div>
+
+<div class="entry">
+    <strong>staging</strong><br>
+    URL: http://bonyanfanavarbaran.ir/staging<br>
+    Status: 301 — Redirected resource<br>
+    Confidence: 0.7
 </div>
 
 
