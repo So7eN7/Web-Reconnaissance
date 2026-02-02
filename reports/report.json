@@ -1,37 +1,42 @@
 {
-    "domain": "pasted.dev",
-    "timestamp": "2026-02-03T01:21:14.383335+03:30",
+    "domain": "httpbin.org",
+    "timestamp": "2026-02-03T02:17:14.230347+03:30",
     "score": 45,
     "subdomains": [
         {
-            "subdomain": "www.pasted.dev",
+            "subdomain": "www.httpbin.org",
             "ips": [
-                "91.195.240.19"
+                "18.214.81.156",
+                "18.210.19.100",
+                "98.91.115.81",
+                "52.204.75.48",
+                "3.223.36.72",
+                "3.210.41.225"
             ],
             "alive": true
         },
         {
-            "subdomain": "api.pasted.dev",
+            "subdomain": "api.httpbin.org",
             "ips": [],
             "alive": false
         },
         {
-            "subdomain": "dev.pasted.dev",
+            "subdomain": "dev.httpbin.org",
             "ips": [],
             "alive": false
         },
         {
-            "subdomain": "test.pasted.dev",
+            "subdomain": "test.httpbin.org",
             "ips": [],
             "alive": false
         },
         {
-            "subdomain": "staging.pasted.dev",
+            "subdomain": "staging.httpbin.org",
             "ips": [],
             "alive": false
         },
         {
-            "subdomain": "mail.pasted.dev",
+            "subdomain": "mail.httpbin.org",
             "ips": [],
             "alive": false
         }
@@ -70,8 +75,8 @@
     ],
     "services": [
         {
-            "subdomain": "www.pasted.dev",
-            "ip": "91.195.240.19",
+            "subdomain": "www.httpbin.org",
+            "ip": "3.223.36.72",
             "port": 80,
             "classification": {
                 "service": "HTTP",
@@ -79,8 +84,8 @@
             }
         },
         {
-            "subdomain": "www.pasted.dev",
-            "ip": "91.195.240.19",
+            "subdomain": "www.httpbin.org",
+            "ip": "3.223.36.72",
             "port": 443,
             "classification": {
                 "service": "HTTP",
@@ -90,52 +95,10 @@
     ],
     "paths": [
         {
-            "path": "admin",
-            "url": "http://www.pasted.dev/admin",
-            "status": 403,
-            "subdomain": "www.pasted.dev"
-        },
-        {
-            "path": "login",
-            "url": "http://www.pasted.dev/login",
-            "status": 403,
-            "subdomain": "www.pasted.dev"
-        },
-        {
-            "path": "dashboard",
-            "url": "http://www.pasted.dev/dashboard",
-            "status": 403,
-            "subdomain": "www.pasted.dev"
-        },
-        {
-            "path": "backup",
-            "url": "http://www.pasted.dev/backup",
-            "status": 403,
-            "subdomain": "www.pasted.dev"
-        },
-        {
             "path": "robots.txt",
-            "url": "http://www.pasted.dev/robots.txt",
-            "status": 403,
-            "subdomain": "www.pasted.dev"
-        },
-        {
-            "path": "sitemap.xml",
-            "url": "http://www.pasted.dev/sitemap.xml",
-            "status": 403,
-            "subdomain": "www.pasted.dev"
-        },
-        {
-            "path": ".git",
-            "url": "http://www.pasted.dev/.git",
-            "status": 403,
-            "subdomain": "www.pasted.dev"
-        },
-        {
-            "path": ".env",
-            "url": "http://www.pasted.dev/.env",
-            "status": 403,
-            "subdomain": "www.pasted.dev"
+            "url": "http://www.httpbin.org/robots.txt",
+            "status": 200,
+            "subdomain": "www.httpbin.org"
         }
     ]
 }

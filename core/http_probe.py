@@ -1,8 +1,8 @@
 import requests
 
-def probe(url):
+def probe(url, timeout=5):
     try:
-        r = requests.get(url, timeout=5, allow_redirects=True)
+        r = requests.get(url, timeout=timeout, allow_redirects=True)
         return {
             "url": r.url,
             "status": r.status_code,
