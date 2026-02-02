@@ -1,0 +1,83 @@
+{
+    "domain": "varzesh3.ir",
+    "timestamp": "2026-02-02T18:29:43.405019",
+    "subdomains": [
+        {
+            "subdomain": "www.varzesh3.ir",
+            "ips": [
+                "46.245.124.120"
+            ],
+            "alive": true
+        },
+        {
+            "subdomain": "api.varzesh3.ir",
+            "ips": [],
+            "alive": false
+        },
+        {
+            "subdomain": "dev.varzesh3.ir",
+            "ips": [],
+            "alive": false
+        },
+        {
+            "subdomain": "test.varzesh3.ir",
+            "ips": [],
+            "alive": false
+        },
+        {
+            "subdomain": "staging.varzesh3.ir",
+            "ips": [],
+            "alive": false
+        },
+        {
+            "subdomain": "mail.varzesh3.ir",
+            "ips": [
+                "46.245.124.48"
+            ],
+            "alive": true
+        },
+        {
+            "subdomain": "blog.varzesh3.ir",
+            "ips": [],
+            "alive": false
+        },
+        {
+            "subdomain": "admin.varzesh3.ir",
+            "ips": [],
+            "alive": false
+        }
+    ],
+    "findings": [
+        {
+            "issue": "Missing Referrer-Policy",
+            "severity": "Low",
+            "recommendation": "Add Referrer-Policy header"
+        },
+        {
+            "issue": "Missing Content-Security-Policy",
+            "severity": "High",
+            "recommendation": "Add Content-Security-Policy header"
+        },
+        {
+            "issue": "Missing Strict-Transport-Security",
+            "severity": "High",
+            "recommendation": "Add Strict-Transport-Security header"
+        },
+        {
+            "issue": "Missing X-Frame-Options",
+            "severity": "Medium",
+            "recommendation": "Add X-Frame-Options header"
+        },
+        {
+            "issue": "Missing X-Content-Type-Options",
+            "severity": "Medium",
+            "recommendation": "Add X-Content-Type-Options header"
+        },
+        {
+            "issue": "Missing Referrer-Policy",
+            "severity": "Low",
+            "recommendation": "Add Referrer-Policy header"
+        }
+    ],
+    "score": 40
+}
