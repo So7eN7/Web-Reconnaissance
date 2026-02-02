@@ -1,83 +1,78 @@
 {
-    "domain": "varzesh3.ir",
-    "timestamp": "2026-02-02T18:29:43.405019",
-    "subdomains": [
+    "domain": "pasted.ir",
+    "ip": "185.105.239.181",
+    "timestamp": "2026-02-02T19:58:14.329009",
+    "services": [
         {
-            "subdomain": "www.varzesh3.ir",
-            "ips": [
-                "46.245.124.120"
-            ],
-            "alive": true
+            "port": 80,
+            "banner": "HTTP/1.1 400 Bad Request\r\nServer: nginx/1.29.0\r\nDate: Mon, 02 Feb 2026 19:58:13 GMT\r\nContent-Type: text/html\r\nContent-Length: 157\r\nConnection: close",
+            "http_info": {
+                "server": "nginx/1.29.0",
+                "x_powered_by": "",
+                "status_code": 200,
+                "headers": {
+                    "Server": "nginx/1.29.0",
+                    "Date": "Mon, 02 Feb 2026 19:58:14 GMT",
+                    "Content-Type": "text/html; charset=utf-8",
+                    "Transfer-Encoding": "chunked",
+                    "Connection": "keep-alive",
+                    "Vary": "Accept-Encoding",
+                    "X-Frame-Options": "DENY, DENY",
+                    "X-Content-Type-Options": "nosniff, nosniff",
+                    "Referrer-Policy": "strict-origin-when-cross-origin, strict-origin-when-cross-origin",
+                    "Cross-Origin-Opener-Policy": "same-origin",
+                    "Content-Security-Policy": "default-src 'self'; connect-src 'self' https://lottie.host https://*.lottie.host https://cdnjs.cloudflare.com https://unpkg.com https://cdn.jsdelivr.net; style-src 'self' 'unsafe-inline' https://cdn.jsdelivr.net https://cdnjs.cloudflare.com; script-src 'self' 'unsafe-inline' 'wasm-unsafe-eval' https://cdnjs.cloudflare.com https://unpkg.com https://cdn.jsdelivr.net; font-src 'self' https://cdn.jsdelivr.net; img-src 'self' data: https:; media-src 'self' https:;",
+                    "Strict-Transport-Security": "max-age=63072000; includeSubDomains; preload",
+                    "Content-Encoding": "gzip"
+                }
+            },
+            "tls_info": null,
+            "classification": {
+                "service": "HTTP",
+                "confidence": 0.95,
+                "evidence": "HTTP/1.1 400 Bad Request\r\nServer: nginx/1.29.0\r\nDate: Mon, 02 Feb 2026 19:58:13 GMT\r\nContent-Type: t"
+            }
         },
         {
-            "subdomain": "api.varzesh3.ir",
-            "ips": [],
-            "alive": false
+            "port": 443,
+            "banner": "HTTP/1.1 400 Bad Request\r\nServer: nginx/1.29.0\r\nDate: Mon, 02 Feb 2026 19:58:14 GMT\r\nContent-Type: text/html\r\nContent-Length: 157\r\nConnection: close\r\nContent-Security-Policy: default-src 'self'; connect-src 'self' https://lottie.host https://*.lottie.host https://cdnjs.cloudflare.com https://unpkg.com https://cdn.jsdelivr.net; style-src 'self' 'unsafe-inline' https://cdn.jsdelivr.net https://cdnjs.cloudflare.com; script-src 'self' 'unsafe-inline' 'wasm-unsafe-eval' https://cdnjs.cloudflare.com https://unpkg.com https://cdn.jsdelivr.net; font-src 'self' https://cdn.jsdelivr.net; img-src 'self' data: https:; media-src 'self' https:;\r\nX-Frame-Options: DENY\r\nX-Content-Type-Options: nosniff\r\nReferrer-Policy: strict-origin-when-cross-origin\r\nStrict-Transport-Security: max-age=63072000; includeSubDomains; preload",
+            "http_info": {
+                "server": "nginx/1.29.0",
+                "x_powered_by": "",
+                "status_code": 200,
+                "headers": {
+                    "Server": "nginx/1.29.0",
+                    "Date": "Mon, 02 Feb 2026 19:58:14 GMT",
+                    "Content-Type": "text/html; charset=utf-8",
+                    "Transfer-Encoding": "chunked",
+                    "Connection": "keep-alive",
+                    "Vary": "Accept-Encoding",
+                    "X-Frame-Options": "DENY, DENY",
+                    "X-Content-Type-Options": "nosniff, nosniff",
+                    "Referrer-Policy": "strict-origin-when-cross-origin, strict-origin-when-cross-origin",
+                    "Cross-Origin-Opener-Policy": "same-origin",
+                    "Content-Security-Policy": "default-src 'self'; connect-src 'self' https://lottie.host https://*.lottie.host https://cdnjs.cloudflare.com https://unpkg.com https://cdn.jsdelivr.net; style-src 'self' 'unsafe-inline' https://cdn.jsdelivr.net https://cdnjs.cloudflare.com; script-src 'self' 'unsafe-inline' 'wasm-unsafe-eval' https://cdnjs.cloudflare.com https://unpkg.com https://cdn.jsdelivr.net; font-src 'self' https://cdn.jsdelivr.net; img-src 'self' data: https:; media-src 'self' https:;",
+                    "Strict-Transport-Security": "max-age=63072000; includeSubDomains; preload",
+                    "Content-Encoding": "gzip"
+                }
+            },
+            "tls_info": null,
+            "classification": {
+                "service": "HTTP",
+                "confidence": 0.95,
+                "evidence": "HTTP/1.1 400 Bad Request\r\nServer: nginx/1.29.0\r\nDate: Mon, 02 Feb 2026 19:58:14 GMT\r\nContent-Type: t"
+            }
         },
         {
-            "subdomain": "dev.varzesh3.ir",
-            "ips": [],
-            "alive": false
-        },
-        {
-            "subdomain": "test.varzesh3.ir",
-            "ips": [],
-            "alive": false
-        },
-        {
-            "subdomain": "staging.varzesh3.ir",
-            "ips": [],
-            "alive": false
-        },
-        {
-            "subdomain": "mail.varzesh3.ir",
-            "ips": [
-                "46.245.124.48"
-            ],
-            "alive": true
-        },
-        {
-            "subdomain": "blog.varzesh3.ir",
-            "ips": [],
-            "alive": false
-        },
-        {
-            "subdomain": "admin.varzesh3.ir",
-            "ips": [],
-            "alive": false
+            "port": 22,
+            "banner": "SSH-2.0-OpenSSH_9.2p1 Debian-2+deb12u7",
+            "http_info": null,
+            "tls_info": null,
+            "classification": {
+                "service": "SSH",
+                "confidence": 0.9,
+                "evidence": "SSH-2.0-OpenSSH_9.2p1 Debian-2+deb12u7"
+            }
         }
-    ],
-    "findings": [
-        {
-            "issue": "Missing Referrer-Policy",
-            "severity": "Low",
-            "recommendation": "Add Referrer-Policy header"
-        },
-        {
-            "issue": "Missing Content-Security-Policy",
-            "severity": "High",
-            "recommendation": "Add Content-Security-Policy header"
-        },
-        {
-            "issue": "Missing Strict-Transport-Security",
-            "severity": "High",
-            "recommendation": "Add Strict-Transport-Security header"
-        },
-        {
-            "issue": "Missing X-Frame-Options",
-            "severity": "Medium",
-            "recommendation": "Add X-Frame-Options header"
-        },
-        {
-            "issue": "Missing X-Content-Type-Options",
-            "severity": "Medium",
-            "recommendation": "Add X-Content-Type-Options header"
-        },
-        {
-            "issue": "Missing Referrer-Policy",
-            "severity": "Low",
-            "recommendation": "Add Referrer-Policy header"
-        }
-    ],
-    "score": 40
+    ]
 }

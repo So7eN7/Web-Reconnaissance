@@ -1,76 +1,49 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Web Recon Report</title>
+    <title>Passive Service Scan</title>
     <style>
         body { font-family: Arial; margin: 40px; }
-        h2 { border-bottom: 1px solid #ccc; }
-        .high { color: red; }
-        .medium { color: orange; }
-        .low { color: green; }
+        .port { margin-bottom: 15px; }
     </style>
 </head>
 <body>
 
-<h1>Web Reconnaissance Report</h1>
-<p><strong>Target:</strong> varzesh3.ir</p>
-<p><strong>Score:</strong> 40/100</p>
+<h1>Passive Service Recognition Report</h1>
 
-<h2>Subdomains</h2>
-<ul>
+<p><strong>Target:</strong> pasted.ir</p>
+<p><strong>IP:</strong> 185.105.239.181</p>
 
-    <li>www.varzesh3.ir — Alive</li>
+<h2>Detected Services</h2>
 
-    <li>api.varzesh3.ir — Not reachable</li>
 
-    <li>dev.varzesh3.ir — Not reachable</li>
+<div class="port">
+    <strong>Port 80</strong><br>
+    Service: HTTP<br>
+    Confidence: 0.95<br>
+    Evidence: <pre>HTTP/1.1 400 Bad Request
+Server: nginx/1.29.0
+Date: Mon, 02 Feb 2026 19:58:13 GMT
+Content-Type: t</pre>
+</div>
 
-    <li>test.varzesh3.ir — Not reachable</li>
+<div class="port">
+    <strong>Port 443</strong><br>
+    Service: HTTP<br>
+    Confidence: 0.95<br>
+    Evidence: <pre>HTTP/1.1 400 Bad Request
+Server: nginx/1.29.0
+Date: Mon, 02 Feb 2026 19:58:14 GMT
+Content-Type: t</pre>
+</div>
 
-    <li>staging.varzesh3.ir — Not reachable</li>
+<div class="port">
+    <strong>Port 22</strong><br>
+    Service: SSH<br>
+    Confidence: 0.9<br>
+    Evidence: <pre>SSH-2.0-OpenSSH_9.2p1 Debian-2+deb12u7</pre>
+</div>
 
-    <li>mail.varzesh3.ir — Alive</li>
-
-    <li>blog.varzesh3.ir — Not reachable</li>
-
-    <li>admin.varzesh3.ir — Not reachable</li>
-
-</ul>
-
-<h2>Findings</h2>
-<ul>
-
-    <li class="low">
-        <strong>Low</strong>: Missing Referrer-Policy<br>
-        Recommendation: Add Referrer-Policy header
-    </li>
-
-    <li class="high">
-        <strong>High</strong>: Missing Content-Security-Policy<br>
-        Recommendation: Add Content-Security-Policy header
-    </li>
-
-    <li class="high">
-        <strong>High</strong>: Missing Strict-Transport-Security<br>
-        Recommendation: Add Strict-Transport-Security header
-    </li>
-
-    <li class="medium">
-        <strong>Medium</strong>: Missing X-Frame-Options<br>
-        Recommendation: Add X-Frame-Options header
-    </li>
-
-    <li class="medium">
-        <strong>Medium</strong>: Missing X-Content-Type-Options<br>
-        Recommendation: Add X-Content-Type-Options header
-    </li>
-
-    <li class="low">
-        <strong>Low</strong>: Missing Referrer-Policy<br>
-        Recommendation: Add Referrer-Policy header
-    </li>
-
-</ul>
 
 </body>
 </html>

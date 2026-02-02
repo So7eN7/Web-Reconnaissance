@@ -1,37 +1,29 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Web Recon Report</title>
+    <title>Passive Service Scan</title>
     <style>
         body { font-family: Arial; margin: 40px; }
-        h2 { border-bottom: 1px solid #ccc; }
-        .high { color: red; }
-        .medium { color: orange; }
-        .low { color: green; }
+        .port { margin-bottom: 15px; }
     </style>
 </head>
 <body>
 
-<h1>Web Reconnaissance Report</h1>
+<h1>Passive Service Recognition Report</h1>
+
 <p><strong>Target:</strong> {{ data.domain }}</p>
-<p><strong>Score:</strong> {{ data.score }}/100</p>
+<p><strong>IP:</strong> {{ data.ip }}</p>
 
-<h2>Subdomains</h2>
-<ul>
-{% for sub in data.subdomains %}
-    <li>{{ sub.subdomain }} — {{ "Alive" if sub.alive else "Not reachable" }}</li>
-{% endfor %}
-</ul>
+<h2>Detected Services</h2>
 
-<h2>Findings</h2>
-<ul>
-{% for f in data.findings %}
-    <li class="{{ f.severity|lower }}">
-        <strong>{{ f.severity }}</strong>: {{ f.issue }}<br>
-        Recommendation: {{ f.recommendation }}
-    </li>
+{% for s in data.services %}
+<div class="port">
+    <strong>Port {{ s.port }}</strong><br>
+    Service: {{ s.classification.service }}<br>
+    Confidence: {{ s.classification.confidence }}<br>
+    Evidence: <pre>{{ s.classification.evidence }}</pre>
+</div>
 {% endfor %}
-</ul>
 
 </body>
 </html>

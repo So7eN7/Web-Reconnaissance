@@ -1,48 +1,58 @@
-from dns_enum import enumerate_subdomains
-from http_probe import probe_http
-from header_analyzer import analyze_headers
-from cookie_analyzer import analyze_cookies
-from scoring import calculate_score
+from dns_resolver import resolve_domain
+from port_probe import probe_ports
+from banner_grabber import grab_banner
+from http_fingerprint import fingerprint_http
+from tls_inspector import inspect_tls
+from service_classifer import classify_service
 from report_generator import generate_json_report, generate_html_report
 from datetime import datetime 
 
 def main(domain):
-    subdomains = enumerate_subdomains(domain)
-    all_findings = []
+    ip = resolve_domain(domain)
+    if not ip:
+        print("Could not resolve domain")
+        return
+    
+    services = []
+    open_ports = probe_ports(ip)
 
-    for sub in subdomains:
-        if not sub["alive"]:
-            continue
+    for entry in open_ports:
+        port = entry["port"]
+        banner = grab_banner(ip, port)
 
-        url = f"http://{sub['subdomain']}"
-        result = probe_http(url)
+        http_info = None
+        tls_info = None
 
-        if not result:
-            continue
+        if port == 80:
+            http_info = fingerprint_http(f"http://{domain}")
+        elif port == 443:
+            http_info = fingerprint_http(f"https://{domain}")
+            tls_info = inspect_tls(ip)
 
-        header_findings = analyze_headers(result["headers"])
-        cookie_findings = analyze_cookies(result["headers"])
+        classification = classify_service(port, banner, http_info)
 
-        all_findings.extend(header_findings)
-        all_findings.extend(cookie_findings)
+        services.append({
+            "port": port,
+            "banner": banner,
+            "http_info": http_info,
+            "tls_info": tls_info,
+            "classification": classification
+        })
 
-    score = calculate_score(all_findings)
-
-    report_data = {
+    report = {
         "domain": domain,
+        "ip": ip,
         "timestamp": datetime.utcnow().isoformat(),
-        "subdomains": subdomains,
-        "findings": all_findings,
-        "score": score
+        "services": services
     }
 
-    generate_json_report(report_data)
-    generate_html_report(report_data)
+    generate_json_report(report)
+    generate_html_report(report)
+    print("Service scan completed.")
 
-    print("Scan completed")
-    print(f"Security score: {score}/100")
-    print("Reports generated in reports/")
 
 if __name__ == "__main__":
-    target = input("Enter domain (example.com): ")
+    target = input("Enter domain: ")
     main(target)
+
+        
