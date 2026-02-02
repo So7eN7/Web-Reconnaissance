@@ -1,2 +1,4 @@
 __pycache__/ 
 venv/
+reports/report.json
+reports/report.html

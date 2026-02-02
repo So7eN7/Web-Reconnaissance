@@ -1,83 +1,108 @@
 {
-    "domain": "varzesh3.ir",
-    "timestamp": "2026-02-02T18:29:43.405019",
+    "domain": "pasted.ir",
+    "timestamp": "2026-02-03T00:47:55.967787+03:30",
+    "score": 100,
     "subdomains": [
         {
-            "subdomain": "www.varzesh3.ir",
+            "subdomain": "www.pasted.ir",
             "ips": [
-                "46.245.124.120"
+                "185.105.239.181"
             ],
             "alive": true
         },
         {
-            "subdomain": "api.varzesh3.ir",
+            "subdomain": "api.pasted.ir",
             "ips": [],
             "alive": false
         },
         {
-            "subdomain": "dev.varzesh3.ir",
+            "subdomain": "dev.pasted.ir",
             "ips": [],
             "alive": false
         },
         {
-            "subdomain": "test.varzesh3.ir",
+            "subdomain": "test.pasted.ir",
             "ips": [],
             "alive": false
         },
         {
-            "subdomain": "staging.varzesh3.ir",
+            "subdomain": "staging.pasted.ir",
             "ips": [],
             "alive": false
         },
         {
-            "subdomain": "mail.varzesh3.ir",
-            "ips": [
-                "46.245.124.48"
-            ],
-            "alive": true
-        },
-        {
-            "subdomain": "blog.varzesh3.ir",
-            "ips": [],
-            "alive": false
-        },
-        {
-            "subdomain": "admin.varzesh3.ir",
+            "subdomain": "mail.pasted.ir",
             "ips": [],
             "alive": false
         }
     ],
-    "findings": [
+    "findings": [],
+    "services": [
         {
-            "issue": "Missing Referrer-Policy",
-            "severity": "Low",
-            "recommendation": "Add Referrer-Policy header"
+            "subdomain": "www.pasted.ir",
+            "port": 22,
+            "classification": {
+                "service": "SSH",
+                "confidence": 0.9
+            }
         },
         {
-            "issue": "Missing Content-Security-Policy",
-            "severity": "High",
-            "recommendation": "Add Content-Security-Policy header"
+            "subdomain": "www.pasted.ir",
+            "port": 80,
+            "classification": {
+                "service": "HTTP",
+                "confidence": 0.95
+            }
         },
         {
-            "issue": "Missing Strict-Transport-Security",
-            "severity": "High",
-            "recommendation": "Add Strict-Transport-Security header"
-        },
-        {
-            "issue": "Missing X-Frame-Options",
-            "severity": "Medium",
-            "recommendation": "Add X-Frame-Options header"
-        },
-        {
-            "issue": "Missing X-Content-Type-Options",
-            "severity": "Medium",
-            "recommendation": "Add X-Content-Type-Options header"
-        },
-        {
-            "issue": "Missing Referrer-Policy",
-            "severity": "Low",
-            "recommendation": "Add Referrer-Policy header"
+            "subdomain": "www.pasted.ir",
+            "port": 443,
+            "classification": {
+                "service": "HTTP",
+                "confidence": 0.95
+            }
         }
     ],
-    "score": 40
+    "paths": [
+        {
+            "path": "admin",
+            "url": "http://www.pasted.ir/admin",
+            "status": 301
+        },
+        {
+            "path": "login",
+            "url": "http://www.pasted.ir/login",
+            "status": 301
+        },
+        {
+            "path": "dashboard",
+            "url": "http://www.pasted.ir/dashboard",
+            "status": 301
+        },
+        {
+            "path": "backup",
+            "url": "http://www.pasted.ir/backup",
+            "status": 301
+        },
+        {
+            "path": "robots.txt",
+            "url": "http://www.pasted.ir/robots.txt",
+            "status": 301
+        },
+        {
+            "path": "sitemap.xml",
+            "url": "http://www.pasted.ir/sitemap.xml",
+            "status": 301
+        },
+        {
+            "path": ".git",
+            "url": "http://www.pasted.ir/.git",
+            "status": 301
+        },
+        {
+            "path": ".env",
+            "url": "http://www.pasted.ir/.env",
+            "status": 301
+        }
+    ]
 }

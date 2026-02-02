@@ -1,37 +1,201 @@
 <!DOCTYPE html>
-<html>
+
+<html lang="en">
 <head>
-    <title>Web Recon Report</title>
+    <meta charset="UTF-8">
+    <title>Passive Reconnaissance Report</title>
     <style>
-        body { font-family: Arial; margin: 40px; }
-        h2 { border-bottom: 1px solid #ccc; }
-        .high { color: red; }
-        .medium { color: orange; }
-        .low { color: green; }
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+            background-color: #0f172a;
+            color: #e5e7eb;
+            margin: 40px;
+        }
+
+        h1, h2, h3 {
+            color: #38bdf8;
+        }
+
+        .card {
+            background-color: #020617;
+            border-radius: 10px;
+            padding: 20px;
+            margin-bottom: 30px;
+            box-shadow: 0 0 15px rgba(0,0,0,0.6);
+        }
+
+        .score {
+            font-size: 48px;
+            font-weight: bold;
+        }
+
+        .score.good { color: #22c55e; }
+        .score.medium { color: #facc15; }
+        .score.bad { color: #ef4444; }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 10px;
+        }
+
+        th, td {
+            padding: 10px;
+            border-bottom: 1px solid #1e293b;
+            text-align: left;
+        }
+
+        th {
+            background-color: #020617;
+            color: #7dd3fc;
+        }
+
+        .sev-high { color: #ef4444; font-weight: bold; }
+        .sev-medium { color: #facc15; font-weight: bold; }
+        .sev-low { color: #22c55e; font-weight: bold; }
+
+        .confidence {
+            font-weight: bold;
+        }
+
+        .confidence.high { color: #22c55e; }
+        .confidence.medium { color: #facc15; }
+        .confidence.low { color: #ef4444; }
+
+        .footer {
+            margin-top: 50px;
+            font-size: 12px;
+            color: #94a3b8;
+        }
+
+        code {
+            background: #020617;
+            padding: 2px 6px;
+            border-radius: 4px;
+            color: #7dd3fc;
+        }
     </style>
 </head>
 <body>
 
-<h1>Web Reconnaissance Report</h1>
-<p><strong>Target:</strong> {{ data.domain }}</p>
-<p><strong>Score:</strong> {{ data.score }}/100</p>
+<h1>Passive Web & Service Reconnaissance Report</h1>
 
-<h2>Subdomains</h2>
-<ul>
-{% for sub in data.subdomains %}
-    <li>{{ sub.subdomain }} — {{ "Alive" if sub.alive else "Not reachable" }}</li>
-{% endfor %}
-</ul>
+<div class="card">
+    <p><strong>Target:</strong> {{ data.domain }}</p>
+    <p><strong>Timestamp:</strong> {{ data.timestamp }}</p>
 
-<h2>Findings</h2>
-<ul>
-{% for f in data.findings %}
-    <li class="{{ f.severity|lower }}">
-        <strong>{{ f.severity }}</strong>: {{ f.issue }}<br>
-        Recommendation: {{ f.recommendation }}
-    </li>
-{% endfor %}
-</ul>
+    {% set score_class = "good" if data.score >= 80 else "medium" if data.score >= 50 else "bad" %}
+    <div class="score {{ score_class }}">
+        {{ data.score }}/100
+    </div>
+</div>
+
+<!-- ================= SUBDOMAINS ================= -->
+<div class="card">
+    <h2>Subdomains</h2>
+    <table>
+        <tr>
+            <th>Subdomain</th>
+            <th>Status</th>
+            <th>IP Addresses</th>
+        </tr>
+        {% for sub in data.subdomains %}
+        <tr>
+            <td>{{ sub.subdomain }}</td>
+            <td>{{ "Alive" if sub.alive else "Unreachable" }}</td>
+            <td>{{ sub.ips | join(", ") }}</td>
+        </tr>
+        {% endfor %}
+    </table>
+</div>
+
+<!-- ================= FINDINGS ================= -->
+<div class="card">
+    <h2>Security Findings</h2>
+
+    {% if data.findings %}
+    <table>
+        <tr>
+            <th>Type</th>
+            <th>Issue</th>
+            <th>Severity</th>
+            <th>Recommendation</th>
+        </tr>
+        {% for f in data.findings %}
+        <tr>
+            <td>{{ f.type }}</td>
+            <td>{{ f.issue }}</td>
+            <td class="sev-{{ f.severity | lower }}">{{ f.severity }}</td>
+            <td>{{ f.recommendation }}</td>
+        </tr>
+        {% endfor %}
+    </table>
+    {% else %}
+        <p>No security misconfigurations detected.</p>
+    {% endif %}
+</div>
+
+<!-- ================= SERVICES ================= -->
+<div class="card">
+    <h2>Detected Services</h2>
+
+    {% if data.services %}
+    <table>
+        <tr>
+            <th>Subdomain</th>
+            <th>IP</th>
+            <th>Port</th>
+            <th>Service</th>
+            <th>Confidence</th>
+        </tr>
+        {% for s in data.services %}
+        {% set conf = s.classification.confidence %}
+        {% set conf_class = "high" if conf >= 0.8 else "medium" if conf >= 0.5 else "low" %}
+        <tr>
+            <td>{{ s.subdomain }}</td>
+            <td>{{ s.ip }}</td>
+            <td>{{ s.port }}</td>
+            <td>{{ s.classification.service }}</td>
+            <td class="confidence {{ conf_class }}">
+                {{ (conf * 100) | round(0) }}%
+            </td>
+        </tr>
+        {% endfor %}
+    </table>
+    {% else %}
+        <p>No services detected.</p>
+    {% endif %}
+</div>
+
+<!-- ================= DIRECTORIES ================= -->
+<div class="card">
+    <h2>Discovered Web Resources</h2>
+
+    {% if data.paths %}
+    <table>
+        <tr>
+            <th>Subdomain</th>
+            <th>Path</th>
+            <th>Status</th>
+        </tr>
+        {% for p in data.paths %}
+        <tr>
+            <td>{{ p.subdomain }}</td>
+            <td><code>/{{ p.path }}</code></td>
+            <td>{{ p.status }}</td>
+        </tr>
+        {% endfor %}
+    </table>
+    {% else %}
+        <p>No interesting resources discovered.</p>
+    {% endif %}
+</div>
+
+<div class="footer">
+    Generated by the Simple Web Reconnaissance tool
+    <br>
+    Passive analysis only • No exploitation • Educational use
+</div>
 
 </body>
 </html>

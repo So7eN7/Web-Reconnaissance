@@ -1,8 +1,6 @@
 import dns.resolver
 
-COMMON_SUBDOMAINS = [
-    "www", "api", "dev", "test", "staging", "mail", "blog", "admin"
-]
+COMMON_SUBDOMAINS = ["www", "api", "dev", "test", "staging", "mail"]
 
 def enumerate_subdomains(domain):
     results = []
@@ -10,10 +8,9 @@ def enumerate_subdomains(domain):
         fqdn = f"{sub}.{domain}"
         try:
             answers = dns.resolver.resolve(fqdn, "A")
-            ips = [a.to_text() for a in answers]
             results.append({
                 "subdomain": fqdn,
-                "ips": ips,
+                "ips": [a.to_text() for a in answers],
                 "alive": True
             })
         except Exception:
@@ -22,6 +19,4 @@ def enumerate_subdomains(domain):
                 "ips": [],
                 "alive": False
             })
-        
     return results
-

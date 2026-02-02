@@ -6,17 +6,15 @@ SECURITY_HEADERS = {
     "Referrer-Policy": "Low"
 }
 
-def analyze_headers(headers):
+def analyze(headers):
     findings = []
-
-    for header, severity in SECURITY_HEADERS.items():
-        if header not in headers:
+    for h, sev in SECURITY_HEADERS.items():
+        if h not in headers:
             findings.append({
-                "issue": f"Missing {header}",
-                "severity": severity,
-                "recommendation": f"Add {header} header" 
+                "type": "Header",
+                "issue": f"Missing {h}",
+                "severity": sev,
+                "recommendation": f"Add {h} header"
             })
-
     return findings
-
 

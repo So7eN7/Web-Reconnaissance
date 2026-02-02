@@ -1,76 +1,276 @@
 <!DOCTYPE html>
-<html>
+
+<html lang="en">
 <head>
-    <title>Web Recon Report</title>
+    <meta charset="UTF-8">
+    <title>Passive Reconnaissance Report</title>
     <style>
-        body { font-family: Arial; margin: 40px; }
-        h2 { border-bottom: 1px solid #ccc; }
-        .high { color: red; }
-        .medium { color: orange; }
-        .low { color: green; }
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+            background-color: #0f172a;
+            color: #e5e7eb;
+            margin: 40px;
+        }
+
+        h1, h2, h3 {
+            color: #38bdf8;
+        }
+
+        .card {
+            background-color: #020617;
+            border-radius: 10px;
+            padding: 20px;
+            margin-bottom: 30px;
+            box-shadow: 0 0 15px rgba(0,0,0,0.6);
+        }
+
+        .score {
+            font-size: 48px;
+            font-weight: bold;
+        }
+
+        .score.good { color: #22c55e; }
+        .score.medium { color: #facc15; }
+        .score.bad { color: #ef4444; }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 10px;
+        }
+
+        th, td {
+            padding: 10px;
+            border-bottom: 1px solid #1e293b;
+            text-align: left;
+        }
+
+        th {
+            background-color: #020617;
+            color: #7dd3fc;
+        }
+
+        .sev-high { color: #ef4444; font-weight: bold; }
+        .sev-medium { color: #facc15; font-weight: bold; }
+        .sev-low { color: #22c55e; font-weight: bold; }
+
+        .confidence {
+            font-weight: bold;
+        }
+
+        .confidence.high { color: #22c55e; }
+        .confidence.medium { color: #facc15; }
+        .confidence.low { color: #ef4444; }
+
+        .footer {
+            margin-top: 50px;
+            font-size: 12px;
+            color: #94a3b8;
+        }
+
+        code {
+            background: #020617;
+            padding: 2px 6px;
+            border-radius: 4px;
+            color: #7dd3fc;
+        }
     </style>
 </head>
 <body>
 
-<h1>Web Reconnaissance Report</h1>
-<p><strong>Target:</strong> varzesh3.ir</p>
-<p><strong>Score:</strong> 40/100</p>
+<h1>Passive Web & Service Reconnaissance Report</h1>
 
-<h2>Subdomains</h2>
-<ul>
+<div class="card">
+    <p><strong>Target:</strong> pasted.ir</p>
+    <p><strong>Timestamp:</strong> 2026-02-03T00:47:55.967787+03:30</p>
 
-    <li>www.varzesh3.ir — Alive</li>
+    
+    <div class="score good">
+        100/100
+    </div>
+</div>
 
-    <li>api.varzesh3.ir — Not reachable</li>
+<!-- ================= SUBDOMAINS ================= -->
+<div class="card">
+    <h2>Subdomains</h2>
+    <table>
+        <tr>
+            <th>Subdomain</th>
+            <th>Status</th>
+            <th>IP Addresses</th>
+        </tr>
+        
+        <tr>
+            <td>www.pasted.ir</td>
+            <td>Alive</td>
+            <td>185.105.239.181</td>
+        </tr>
+        
+        <tr>
+            <td>api.pasted.ir</td>
+            <td>Unreachable</td>
+            <td></td>
+        </tr>
+        
+        <tr>
+            <td>dev.pasted.ir</td>
+            <td>Unreachable</td>
+            <td></td>
+        </tr>
+        
+        <tr>
+            <td>test.pasted.ir</td>
+            <td>Unreachable</td>
+            <td></td>
+        </tr>
+        
+        <tr>
+            <td>staging.pasted.ir</td>
+            <td>Unreachable</td>
+            <td></td>
+        </tr>
+        
+        <tr>
+            <td>mail.pasted.ir</td>
+            <td>Unreachable</td>
+            <td></td>
+        </tr>
+        
+    </table>
+</div>
 
-    <li>dev.varzesh3.ir — Not reachable</li>
+<!-- ================= FINDINGS ================= -->
+<div class="card">
+    <h2>Security Findings</h2>
 
-    <li>test.varzesh3.ir — Not reachable</li>
+    
+        <p>No security misconfigurations detected.</p>
+    
+</div>
 
-    <li>staging.varzesh3.ir — Not reachable</li>
+<!-- ================= SERVICES ================= -->
+<div class="card">
+    <h2>Detected Services</h2>
 
-    <li>mail.varzesh3.ir — Alive</li>
+    
+    <table>
+        <tr>
+            <th>Subdomain</th>
+            <th>IP</th>
+            <th>Port</th>
+            <th>Service</th>
+            <th>Confidence</th>
+        </tr>
+        
+        
+        
+        <tr>
+            <td>www.pasted.ir</td>
+            <td></td>
+            <td>22</td>
+            <td>SSH</td>
+            <td class="confidence high">
+                90.0%
+            </td>
+        </tr>
+        
+        
+        
+        <tr>
+            <td>www.pasted.ir</td>
+            <td></td>
+            <td>80</td>
+            <td>HTTP</td>
+            <td class="confidence high">
+                95.0%
+            </td>
+        </tr>
+        
+        
+        
+        <tr>
+            <td>www.pasted.ir</td>
+            <td></td>
+            <td>443</td>
+            <td>HTTP</td>
+            <td class="confidence high">
+                95.0%
+            </td>
+        </tr>
+        
+    </table>
+    
+</div>
 
-    <li>blog.varzesh3.ir — Not reachable</li>
+<!-- ================= DIRECTORIES ================= -->
+<div class="card">
+    <h2>Discovered Web Resources</h2>
 
-    <li>admin.varzesh3.ir — Not reachable</li>
+    
+    <table>
+        <tr>
+            <th>Subdomain</th>
+            <th>Path</th>
+            <th>Status</th>
+        </tr>
+        
+        <tr>
+            <td></td>
+            <td><code>/admin</code></td>
+            <td>301</td>
+        </tr>
+        
+        <tr>
+            <td></td>
+            <td><code>/login</code></td>
+            <td>301</td>
+        </tr>
+        
+        <tr>
+            <td></td>
+            <td><code>/dashboard</code></td>
+            <td>301</td>
+        </tr>
+        
+        <tr>
+            <td></td>
+            <td><code>/backup</code></td>
+            <td>301</td>
+        </tr>
+        
+        <tr>
+            <td></td>
+            <td><code>/robots.txt</code></td>
+            <td>301</td>
+        </tr>
+        
+        <tr>
+            <td></td>
+            <td><code>/sitemap.xml</code></td>
+            <td>301</td>
+        </tr>
+        
+        <tr>
+            <td></td>
+            <td><code>/.git</code></td>
+            <td>301</td>
+        </tr>
+        
+        <tr>
+            <td></td>
+            <td><code>/.env</code></td>
+            <td>301</td>
+        </tr>
+        
+    </table>
+    
+</div>
 
-</ul>
-
-<h2>Findings</h2>
-<ul>
-
-    <li class="low">
-        <strong>Low</strong>: Missing Referrer-Policy<br>
-        Recommendation: Add Referrer-Policy header
-    </li>
-
-    <li class="high">
-        <strong>High</strong>: Missing Content-Security-Policy<br>
-        Recommendation: Add Content-Security-Policy header
-    </li>
-
-    <li class="high">
-        <strong>High</strong>: Missing Strict-Transport-Security<br>
-        Recommendation: Add Strict-Transport-Security header
-    </li>
-
-    <li class="medium">
-        <strong>Medium</strong>: Missing X-Frame-Options<br>
-        Recommendation: Add X-Frame-Options header
-    </li>
-
-    <li class="medium">
-        <strong>Medium</strong>: Missing X-Content-Type-Options<br>
-        Recommendation: Add X-Content-Type-Options header
-    </li>
-
-    <li class="low">
-        <strong>Low</strong>: Missing Referrer-Policy<br>
-        Recommendation: Add Referrer-Policy header
-    </li>
-
-</ul>
+<div class="footer">
+    Generated by the Simple Web Reconnaissance tool
+    <br>
+    Passive analysis only • No exploitation • Educational use
+</div>
 
 </body>
 </html>
