@@ -23,7 +23,7 @@ from dir_scan.response_analyzer import analyze as path_analyze
 from reports.report_generator import generate_json_report, generate_html_report
 
 def run_scan(domain, run_headers, run_services, run_dirs, 
-             output_dir, timeout, rate_limit, quiet):
+             output_dir, timeout, rate_limit, quiet, verbose):
     findings = []
     services = []
     paths = []
@@ -147,7 +147,8 @@ def main():
         output_dir=args.out,
         timeout=args.timeout,
         rate_limit=args.timeout,
-        quiet=args.quiet
+        quiet=args.quiet,
+        verbose=args.verbose
     )
 
 
