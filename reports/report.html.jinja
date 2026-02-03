@@ -90,6 +90,32 @@
     </div>
 </div>
 
+<!-- ================= SCORE BREAKDOWN ================= -->
+
+<div class="card">
+    <h2>Score Breakdown</h2>
+
+    {% if data.score_breakdown %}
+    <table>
+        <tr>
+            <th>Category</th>
+            <th>Penalty</th>
+            <th>Reason</th>
+        </tr>
+        {% for b in data.score_breakdown %}
+        <tr>
+            <td>{{ b.category }}</td>
+            <td class="sev-high">-{{ b.penalty }}</td>
+            <td>{{ b.reason }}</td>
+        </tr>
+        {% endfor %}
+    </table>
+    {% else %}
+        <p>No deductions applied.</p>
+    {% endif %}
+</div>
+
+
 <!-- ================= SUBDOMAINS ================= -->
 <div class="card">
     <h2>Subdomains</h2>

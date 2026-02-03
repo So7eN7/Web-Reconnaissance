@@ -82,12 +82,13 @@ def run_scan(domain, run_headers, run_services, run_dirs,
                     paths.append(analysis)
                 time.sleep(rate_limit)
 
-    score = calculate(findings)
+    score, score_breakdown = calculate(findings, services, paths)
 
     report = {
         "domain": domain,
         "timestamp": datetime.now().astimezone().isoformat(),
         "score": score,
+        "score_breakdown": score_breakdown,
         "subdomains": subdomains,
         "findings": findings,
         "services": services,
